@@ -32,12 +32,6 @@ public class Posicion {
         this.y = y;
     }
     
-    // Método para actualizar posición
-    public void mover(float dx, float dy) {
-        this.x += dx;
-        this.y += dy;
-    }
-    
     @Override
     public String toString() {
         return "Posicion(" + x + ", " + y + ")";
