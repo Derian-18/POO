@@ -6,12 +6,14 @@ import models.cajas;
 import models.Dimension;
 import models.Posicion;
 import models.triangulo;
-
+import models.circulo;
+        
 public class POO extends PApplet{
 
     Borde borde;
     cajas caja1, caja2, caja3, caja4,caja5, caja6, caja7, caja8, caja9, caja10;
     triangulo triangulo1;
+    circulo circulo1, circulo2;
     
     public static void main(String[] args) {
         PApplet.main("com.mycompany.poo.POO");
@@ -46,18 +48,18 @@ public class POO extends PApplet{
         //Pico
         // x1,y1 (izq), x2,y2 (der), x3,y3 (punta abajo), color
         triangulo1 = new triangulo(370, 290, 430, 290, 400, 250, color(247, 208, 37));
-        //Aletas
+        //Aletas    
         // Ala izquierda (un poco más arriba del centro del cuerpo)
-        caja9 = new cajas(180, 300, 40, 120, color(0)); 
+        circulo1 = new circulo(180, 300, 40, 120, color(0)); 
         // Ala derecha
-        caja10 = new cajas(620, 300, 40, 120, color(0));
+        circulo2 = new circulo(620, 300, 40, 120, color(0));
     }
     
     @Override
     public void draw() {
         background(config.COLOR_FONDO);
         
-        borde.setAncho(3);
+        borde.setAncho(3); 
         borde.setColor(color(0));
         
         // Color y ancho de los bordes
@@ -127,20 +129,20 @@ public class POO extends PApplet{
         
         stroke(0);
         pushMatrix();
-            translate(caja9.getPosicion().getX(), caja9.getPosicion().getY());
+            translate(circulo1.getPosicion().getX(), circulo1.getPosicion().getY());
             rotate(radians(30)); // Inclinada hacia afuera
-            fill(caja9.getColor());
+            fill(circulo1.getColor());
             stroke(0); // Borde negro
-            ellipse(0, 0, caja9.getDimension().getAncho(), caja9.getDimension().getAlto());
+            ellipse(0, 0, circulo1.getDimension().getAncho(), circulo1.getDimension().getAlto());
         popMatrix();
 
         // --- ALA DERECHA ---
         pushMatrix();
-            translate(caja10.getPosicion().getX(), caja10.getPosicion().getY());
+            translate(circulo2.getPosicion().getX(), circulo2.getPosicion().getY());
             rotate(radians(-30)); // Inclinada hacia el otro lado
-            fill(caja10.getColor());
+            fill(circulo2.getColor());
             stroke(0);
-            ellipse(0, 0, caja10.getDimension().getAncho(), caja10.getDimension().getAlto());
+            ellipse(0, 0, circulo2.getDimension().getAncho(), circulo2.getDimension().getAlto());
         popMatrix();
     }     
 }

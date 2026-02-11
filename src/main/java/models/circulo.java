@@ -1,14 +1,13 @@
 package models;
 
-public class cajas extends Figura {
-
+public class circulo extends Figura{
     // Constructor completo
-    public cajas(Posicion posicion, Dimension dimension, int color) {
+    public circulo(Posicion posicion, Dimension dimension, int color) {
         super(posicion, dimension, color);
     }
 
     // Constructor simplificado
-    public cajas(float x, float y, float ancho, float alto, int color) {
+    public circulo(float x, float y, float ancho, float alto, int color) {
         super(new Posicion(x, y), new Dimension(ancho, alto), color);
     }
 }
