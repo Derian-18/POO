@@ -1,4 +1,5 @@
 package models;
+import models.Posicion;
 
 public class Figura {
     private Posicion posicion;
@@ -18,6 +19,11 @@ public class Figura {
         this.color = color;
     }
     
+    public void mover(float dx, float dy) {
+        posicion.setX(posicion.getX() + dx);
+        posicion.setY(posicion.getY() + dy);
+    }
+       
     //Aqui estan los getters y setters
     
     // Getters

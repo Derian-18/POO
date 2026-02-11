@@ -7,11 +7,12 @@ import models.Dimension;
 import models.Posicion;
 import models.triangulo;
 import models.circulo;
+import models.Figura;
         
 public class POO extends PApplet{
 
     Borde borde;
-    cajas caja1, caja2, caja3, caja4,caja5, caja6, caja7, caja8, caja9, caja10;
+    cajas caja1, caja2, caja3, caja4,caja5, caja6, caja7, caja8;
     triangulo triangulo1;
     circulo circulo1, circulo2;
     
@@ -24,10 +25,14 @@ public class POO extends PApplet{
         size(config.ANCHO, config.ALTO);
     }
     
+    Figura[] pinguino;
+    
     @Override
     public void setup() {
         background(config.COLOR_FONDO);
         borde = new Borde();
+        
+        
         
         // Aqui creamos las cajas
         //Numeros bajos subir, numeros altos bajar
@@ -53,6 +58,8 @@ public class POO extends PApplet{
         circulo1 = new circulo(180, 300, 40, 120, color(0)); 
         // Ala derecha
         circulo2 = new circulo(620, 300, 40, 120, color(0));
+        
+        pinguino = new Figura[]{caja1, caja2, caja3, caja4, caja5, caja6, caja7, caja8, triangulo1, circulo1, circulo2};
     }
     
     @Override
@@ -144,5 +151,9 @@ public class POO extends PApplet{
             stroke(0);
             ellipse(0, 0, circulo2.getDimension().getAncho(), circulo2.getDimension().getAlto());
         popMatrix();
+        
+        for (Figura f : pinguino) {
+            f.mover(1, 1);
+        }
     }     
 }

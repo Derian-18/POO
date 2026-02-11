@@ -8,7 +8,7 @@ public class Posicion {
         this.x = x;
         this.y = y;
     }
-    
+     
     // Constructor por defecto
     public Posicion() {
         this(0, 0);
@@ -31,7 +31,7 @@ public class Posicion {
     public void setY(float y) {
         this.y = y;
     }
-    
+        
     @Override
     public String toString() {
         return "Posicion(" + x + ", " + y + ")";
