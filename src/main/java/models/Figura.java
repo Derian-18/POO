@@ -1,5 +1,4 @@
 package models;
-import models.Posicion;
 
 public class Figura {
     private Posicion posicion;

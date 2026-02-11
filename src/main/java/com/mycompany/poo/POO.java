@@ -1,3 +1,7 @@
+/* Jimenez Ramirez Derian Fernando
+   11 de febrero del 2026
+   Grupo: 08IDPRMA */
+
 package com.mycompany.poo;
 
 import processing.core.PApplet;
@@ -15,6 +19,9 @@ public class POO extends PApplet{
     cajas caja1, caja2, caja3, caja4,caja5, caja6, caja7, caja8;
     triangulo triangulo1;
     circulo circulo1, circulo2;
+    
+    float vx = 2;
+    float vy = 2;
     
     public static void main(String[] args) {
         PApplet.main("com.mycompany.poo.POO");
@@ -152,8 +159,16 @@ public class POO extends PApplet{
             ellipse(0, 0, circulo2.getDimension().getAncho(), circulo2.getDimension().getAlto());
         popMatrix();
         
+        
         for (Figura f : pinguino) {
-            f.mover(1, 1);
+            f.mover(vx, vy);
+        }
+
+        // Si llega al borde derecho o izquierdo, cambia dirección
+        if (caja1.getPosicion().getX() > width - 400 || caja1.getPosicion().getX() < 0 &&
+                caja1.getPosicion().getY() > height - 400 || caja1.getPosicion().getY() < 0) {
+            vx = -vx; // invierte la velocidad
+            vy = -vy;
         }
     }     
 }
