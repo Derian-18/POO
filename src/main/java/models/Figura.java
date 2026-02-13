@@ -1,6 +1,7 @@
 package models;
+import processing.core.PApplet;
 
-public class Figura {
+public abstract class Figura {
     private Posicion posicion;
     private Dimension dimension;
     protected int color;
@@ -17,6 +18,8 @@ public class Figura {
         this.dimension = new Dimension(ancho, alto);
         this.color = color;
     }
+    
+    public abstract void dibujar(PApplet app);
     
     public void mover(float dx, float dy) {
         posicion.setX(posicion.getX() + dx);
@@ -53,6 +56,6 @@ public class Figura {
     
     @Override
     public String toString() {
-        return "Caja[" + posicion + ", " + dimension + ", Color: " + color + "]";
+        return "Figura[" + posicion + ", " + dimension + ", Color: " + color + "]";
     }
 }
